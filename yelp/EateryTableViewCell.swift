@@ -19,6 +19,7 @@ class EateryTableViewCell: UITableViewCell {
   @IBOutlet var ratingLabel: UILabel!
   @IBOutlet var reviewCountLabel: UILabel!
   @IBOutlet var previewImageView: UIImageView!
+  @IBOutlet var ratingStarsView: UIView!
   
   var eatery: Eatery?
   override func awakeFromNib() {
@@ -37,6 +38,7 @@ class EateryTableViewCell: UITableViewCell {
     addressLabel.textColor = Colors.text
     distanceLabel.textColor = Colors.lightText
     reviewCountLabel.textColor = Colors.lightText
+    ratingStarsView.backgroundColor = UIColor.clearColor()
     
     selectionStyle = .None
   }
@@ -61,6 +63,32 @@ class EateryTableViewCell: UITableViewCell {
       previewImageView.clipsToBounds = true
       previewImageView.contentMode = .ScaleAspectFill
       previewImageView.af_setImageWithURL(NSURL(string: imageURLString)!, imageTransition: .CrossDissolve(0.2))
+    }
+    
+    ratingStarsView.subviews.forEach { starView in
+      starView.removeFromSuperview()
+    }
+    
+    var rating: Float = 0
+    
+    if let r = eatery?.rating {
+      rating = r
+    }
+    
+    for i in 1...5 {
+      var imageName = "star-none"
+      
+      if rating >= Float(i) {
+        imageName = "star-full"
+        
+      } else if rating > Float(i - 1) {
+        imageName = "star-half"
+      }
+      
+      let imageView = UIImageView(image: UIImage(named: imageName))
+      imageView.frame = CGRectMake(CGFloat((i - 1) * 12), 0, 10, 10)
+      
+      ratingStarsView.addSubview(imageView)
     }
   }
 }

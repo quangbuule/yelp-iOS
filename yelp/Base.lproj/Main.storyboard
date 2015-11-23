@@ -163,6 +163,7 @@
                                             <outlet property="paperView" destination="WFd-Et-lQB" id="2kI-yA-BWl"/>
                                             <outlet property="previewImageView" destination="Olo-Od-QuA" id="xVy-8k-OFx"/>
                                             <outlet property="ratingLabel" destination="l3N-ug-Xvi" id="Lvb-TK-1y5"/>
+                                            <outlet property="ratingStarsView" destination="MIo-7V-OQW" id="xjk-rt-usp"/>
                                             <outlet property="reviewCountLabel" destination="7LW-OS-6Ay" id="spm-mD-t3l"/>
                                         </connections>
                                     </tableViewCell>
@@ -286,7 +287,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-3C-4XX">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-3C-4XX">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <animations/>
                             </mapView>
