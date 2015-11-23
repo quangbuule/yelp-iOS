@@ -27,3 +27,10 @@ Time spent: 25hrs
 - [x] Filter page
    - [x] Radius filter should expand as in the real Yelp app (with animation)
    - [x] Categories should show a subset of the full list with a "See All" row to expand. Category list is here: http://www.yelp.com/developers/documentation/category_list (Links to an external site.)
+
+### Walkthrough
+
+![Video Walkthrough](walkthrough.gif)![Video Walkthrough2](walkthrough2.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+Icons are from thenounproject.com.
