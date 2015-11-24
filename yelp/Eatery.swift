@@ -13,6 +13,7 @@ class Eatery: RestfulEntity {
   
   let name: String
   let address: String?
+  let phone: String?
   let rating: Float?
   let reviewCount: Int?
   let distance: Float?
@@ -23,6 +24,7 @@ class Eatery: RestfulEntity {
   
   required init(rawData: NSDictionary) {
     name = rawData["name"] as! String
+    phone = rawData["display_phone"] as? String
     rating = rawData["rating"] as? Float
     reviewCount = rawData["review_count"] as? Int
     distance = rawData["distance"] as? Float

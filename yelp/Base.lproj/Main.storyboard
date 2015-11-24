@@ -415,6 +415,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="Zfb-e7-00f" id="j8r-G8-ccq"/>
                         <outlet property="infoView" destination="zIT-JW-RgQ" id="WpF-DZ-UWy"/>
+                        <outlet property="mapView" destination="YNs-Sl-Pyz" id="cVh-KQ-c2y"/>
                         <outlet property="nameLabel" destination="qHD-p7-pca" id="u1h-zb-Eyi"/>
                         <outlet property="paperView" destination="OBY-1t-ftc" id="mRO-GI-bl0"/>
                         <outlet property="phoneLabel" destination="aqV-pA-VuQ" id="Cso-He-9zs"/>

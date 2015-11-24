@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class EateryDetailViewController: UIViewController {
   
@@ -20,7 +21,12 @@ class EateryDetailViewController: UIViewController {
   @IBOutlet var ratingStarsView: UIView!
   @IBOutlet var reviewCountLabel: UILabel!
   
+  @IBOutlet var mapView: MKMapView!
+  
   var eatery: Eatery!
+  var eateryLocation: CLLocation!
+  var eateryPin: EateryPin!
+  let regionRadius: CLLocationDistance = 700
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,6 +49,7 @@ class EateryDetailViewController: UIViewController {
     title = eatery?.name
     
     nameLabel.text = eatery?.name
+    phoneLabel.text = eatery?.phone
     addressLabel.text = eatery?.address
     
     if let rating = eatery?.rating {
@@ -84,5 +91,27 @@ class EateryDetailViewController: UIViewController {
       
       ratingStarsView.addSubview(imageView)
     }
+    
+    eateryLocation = CLLocation(
+      latitude: Double(eatery.latitude),
+      longitude: Double(eatery.longitude)
+    )
+    
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(eateryLocation.coordinate,
+      regionRadius * 2.0, regionRadius * 2.0);
+    
+    eateryPin = EateryPin(
+      coordinate: CLLocationCoordinate2D(latitude: Double(eatery.latitude), longitude: Double(eatery.longitude)),
+      title: eatery.name,
+      subtitle: eatery.address!
+    )
+    
+    mapView.setRegion(coordinateRegion, animated: true)
+    mapView.addAnnotation(eateryPin)
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    mapView.selectAnnotation(eateryPin, animated: true)
   }
 }
