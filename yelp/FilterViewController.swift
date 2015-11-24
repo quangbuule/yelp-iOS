@@ -43,7 +43,7 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate, Filt
       type: .Switch,
       items: [
         FilterItem(
-          name: .deals,
+          name: .Deals,
           value: YelpClient.Filters.deal["value"] as! Bool,
           label: YelpClient.Filters.deal["label"] as? String
         )
@@ -55,7 +55,7 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate, Filt
       type: .Radio(name: "distance"),
       items: YelpClient.Filters.distances.map {datum in
           return FilterItem(
-            name: .distance,
+            name: .Distance,
             value: datum["value"] as! Float,
             label: datum["label"] as? String
           )
@@ -68,7 +68,7 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate, Filt
       type: .Radio(name: "sort"),
       items: YelpClient.Filters.sorts.map {datum in
         return FilterItem(
-          name: .sort,
+          name: .Sort,
           value: datum["value"] as! Int,
           label: datum["label"] as? String
         )
@@ -81,7 +81,7 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate, Filt
       type: .Switch,
       items: YelpClient.Filters.categories.map {datum in
         return FilterItem(
-          name: .category(name: datum["value"] as! String),
+          name: .Category(name: datum["value"] as! String),
           value: datum["value"] as! String,
           label: datum["label"] as? String
         )
@@ -223,10 +223,10 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate, Filt
 extension FilterViewController {
   
   enum FilterName {
-    case deals
-    case distance
-    case sort
-    case category(name: String)
+    case Deals
+    case Distance
+    case Sort
+    case Category(name: String)
   }
   
   // MARK: Filtering structs

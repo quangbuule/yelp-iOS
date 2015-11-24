@@ -174,16 +174,16 @@ extension EateryTableViewController {
 extension EateryTableViewController: FilterViewDelegate {
   func filterView(isCellActiveForFilterWithName name: FilterViewController.FilterName, filterValue value: AnyObject) -> Bool {
     switch name {
-    case .deals:
+    case .Deals:
       return filteringEateries.deals
       
-    case .distance:
+    case .Distance:
       return filteringEateries.distance == value as! Float
       
-    case .sort:
+    case .Sort:
       return filteringEateries.sort == value as! Int
       
-    case .category(let name):
+    case .Category(let name):
       if let active = filteringEateries.categories[name] {
         return active
       }
@@ -194,10 +194,10 @@ extension EateryTableViewController: FilterViewDelegate {
   
   func filterView(valueForFilterWithName name: FilterViewController.FilterName) -> AnyObject {
     switch name {
-    case .distance:
+    case .Distance:
       return filteringEateries.distance
       
-    case .sort:
+    case .Sort:
       return filteringEateries.sort
       
     default:
@@ -207,19 +207,19 @@ extension EateryTableViewController: FilterViewDelegate {
   
   func filterView(valueWillChangeAtFilterWithName name: FilterViewController.FilterName, value: AnyObject) {
     switch name {
-    case .deals:
+    case .Deals:
       filteringEateries.deals = value as! Bool
       break
       
-    case .distance:
+    case .Distance:
       filteringEateries.distance = value as! Float
       break
       
-    case .sort:
+    case .Sort:
       filteringEateries.sort = value as! Int
       break
       
-    case .category(let categoryName):
+    case .Category(let categoryName):
       if value as! Bool {
         filteringEateries.categories[categoryName] = true
         
@@ -246,8 +246,14 @@ extension EateryTableViewController: FilterViewDelegate {
     
     if segue.identifier == "mapSegue" {
       let mapViewController = segue.destinationViewController as! MapViewController
-      
       mapViewController.eateries = eateries
+    }
+    
+    if segue.identifier == "detailSegue" {
+      let selectedCell = sender as! EateryTableViewCell
+      let mapViewController = segue.destinationViewController as! EateryDetailViewController
+
+      mapViewController.eatery = selectedCell.eatery
     }
   }
 }

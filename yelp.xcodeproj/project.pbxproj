@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5822B9111C03EB2600E7EF87 /* EateryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5822B9101C03EB2600E7EF87 /* EateryDetailViewController.swift */; };
 		58514EB41BF9FF7E0015EAAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58514EB31BF9FF7E0015EAAF /* AppDelegate.swift */; };
 		58514EB91BF9FF7E0015EAAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58514EB71BF9FF7E0015EAAF /* Main.storyboard */; };
 		58514EBB1BF9FF7E0015EAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58514EBA1BF9FF7E0015EAAF /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5822B9101C03EB2600E7EF87 /* EateryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EateryDetailViewController.swift; sourceTree = "<group>"; };
 		58514EB01BF9FF7E0015EAAF /* yelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58514EB31BF9FF7E0015EAAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58514EB81BF9FF7E0015EAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				58514ECD1BFDEE110015EAAF /* EateryTableViewCell.swift */,
 				58514ED71BFEF8060015EAAF /* FilterTableView.swift */,
 				58760E231C016F17006200B9 /* SearchBarView.swift */,
+				5822B9101C03EB2600E7EF87 /* EateryDetailViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				58514ED41BFE3C330015EAAF /* NavigationController.swift in Sources */,
 				58514ECE1BFDEE110015EAAF /* EateryTableViewCell.swift in Sources */,
 				58E0D25F1C008C32006FCCFF /* Restful.swift in Sources */,
+				5822B9111C03EB2600E7EF87 /* EateryDetailViewController.swift in Sources */,
 				58514ED01BFDEF5E0015EAAF /* EateryTableView.swift in Sources */,
 				58760E241C016F17006200B9 /* SearchBarView.swift in Sources */,
 				58E0D25D1C007F36006FCCFF /* Eatery.swift in Sources */,
