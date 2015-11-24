@@ -109,6 +109,7 @@
 		58E0D2601C00A093006FCCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5822B9101C03EB2600E7EF87 /* EateryDetailViewController.swift */,
 				58514ED51BFE9C540015EAAF /* FilterViewController.swift */,
 				58514ED31BFE3C330015EAAF /* NavigationController.swift */,
 				58514ECB1BFDEDB60015EAAF /* EateryTableViewController.swift */,
@@ -127,7 +128,6 @@
 				58514ECD1BFDEE110015EAAF /* EateryTableViewCell.swift */,
 				58514ED71BFEF8060015EAAF /* FilterTableView.swift */,
 				58760E231C016F17006200B9 /* SearchBarView.swift */,
-				5822B9101C03EB2600E7EF87 /* EateryDetailViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";

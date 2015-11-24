@@ -101,7 +101,7 @@ class EateryDetailViewController: UIViewController {
       regionRadius * 2.0, regionRadius * 2.0);
     
     eateryPin = EateryPin(
-      coordinate: CLLocationCoordinate2D(latitude: Double(eatery.latitude), longitude: Double(eatery.longitude)),
+      eatery: eatery,
       title: eatery.name,
       subtitle: eatery.address!
     )

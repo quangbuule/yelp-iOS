@@ -476,11 +476,12 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="eiP-3C-4XX" id="AsG-JE-RO1"/>
+                        <segue destination="H54-Jh-iZh" kind="show" identifier="detailSegue" id="SL6-1E-MS2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XtS-fN-hUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="1308"/>
+            <point key="canvasLocation" x="2111" y="1308"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="gCr-ZI-Ft4">
@@ -686,4 +687,7 @@
         <image name="down-caret" width="24" height="24"/>
         <image name="magnify-icon" width="24" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SL6-1E-MS2"/>
+    </inferredMetricsTieBreakers>
 </document>

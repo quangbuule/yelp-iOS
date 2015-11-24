@@ -20,13 +20,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     mapView.delegate = self
+    title = "Maps"
     centerMapOnLocation(initialLocation)
 
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    reloadData()
+    eateries.items.forEach { eatery in
+      let eateryPin = EateryPin(
+        eatery: eatery,
+        title: eatery.name,
+        subtitle: eatery.address!
+      )
+      
+      self.mapView.addAnnotation(eateryPin)
+    }
   }
   
   func centerMapOnLocation(location: CLLocation) {
@@ -42,31 +51,33 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     view.calloutOffset = CGPoint(x: -5, y: 5)
     view.rightCalloutAccessoryView = UIButton(type: .InfoLight) as UIView
     view.pinTintColor = Colors.primary
+    view.tintColor = Colors.text
     
     return view
   }
   
-  func reloadData() {
-    eateries.items.forEach { eatery in
-      let eateryPin = EateryPin(
-        coordinate: CLLocationCoordinate2D(latitude: Double(eatery.latitude), longitude: Double(eatery.longitude)),
-        title: eatery.name,
-        subtitle: eatery.address!
-      )
-      
-      self.mapView.addAnnotation(eateryPin)
-
+  func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    let eateryPin = view.annotation as! EateryPin
+    performSegueWithIdentifier("detailSegue", sender: eateryPin)
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "detailSegue" {
+      (segue.destinationViewController as! EateryDetailViewController).eatery = (sender as! EateryPin).eatery
     }
   }
 }
 
 class EateryPin: NSObject, MKAnnotation {
-  var coordinate: CLLocationCoordinate2D
-  var title: String?
-  var subtitle: String?
   
-  init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
-    self.coordinate = coordinate
+  let eatery: Eatery!
+  let coordinate: CLLocationCoordinate2D
+  let title: String?
+  let subtitle: String?
+  
+  init(eatery: Eatery, title: String, subtitle: String) {
+    self.eatery = eatery
+    self.coordinate = CLLocationCoordinate2D(latitude: Double(eatery.latitude), longitude: Double(eatery.longitude))
     self.title = title
     self.subtitle = subtitle
   }
