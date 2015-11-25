@@ -102,37 +102,6 @@ class RestfulCollection<T: RestfulEntity> {
         done(self)
       }
     }
-    
-    // TODO: Prepare pagination
-    
-    //    let request = {() -> Alamofire.Request in
-    //      let mutableRequest = Alamofire.request(.GET, self.requestURLString, parameters: self.parameters)
-    //        .request as! NSMutableURLRequest
-    //
-    //      mutableRequest.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-    //      return Alamofire.request(mutableRequest)
-    //    }()
-    
-    //    request
-    //      .responseJSON { response in
-    //        if let JSON = response.result.value {
-    //          self.fetching = false
-    //          self.failed = false
-    //
-    //          self.items += (JSON["results"] as! [NSDictionary]).map { movieRawData in
-    //            return Eatery(rawData: movieRawData)
-    //          }
-    //
-    //          done(self)
-    //        }
-    //
-    //        if let error = response.result.error {
-    //          self.fetching = false
-    //          self.failed = true
-    //
-    //          fail(error)
-    //        }
-    //    }
   }
   
   func get(index: Int) -> T? {
